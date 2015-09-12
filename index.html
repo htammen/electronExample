@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Electron Test</title>
+
+<script src="jquery/jquery.js"/>
+
+		<!-- application does not have its own jquery-ui-position, so it might use the one from SAPUI5 -->
+		<script src="openui5/resources/sap/ui/thirdparty/jqueryui/jquery-ui-position.js" ></script>
+
+		<script id="sap-ui-bootstrap"
+			src="../UI5/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{
+				"shambles.blog": "./"
+			}'> /* endOfResourceroots */
+		</script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "shambles.blog"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content" />
+
+</html>
