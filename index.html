@@ -7,20 +7,22 @@
 
 		<title>Electron Test</title>
 
-<script src="jquery/jquery.js"/>
+		<script>
+			jQuery = require("./jquery/jquery.js");
+		</script>
 
 		<!-- application does not have its own jquery-ui-position, so it might use the one from SAPUI5 -->
-		<script src="openui5/resources/sap/ui/thirdparty/jqueryui/jquery-ui-position.js" ></script>
+		<script src="../openui5-runtime-1.30.8/resources/sap/ui/thirdparty/jqueryui/jquery-ui-position-dbg.js" ></script>
 
 		<!-- Remember to point at your local UI5 directory -->
 		<script id="sap-ui-bootstrap"
-			src="../../UI5/resources/sap-ui-core.js"
+			src="../openui5-runtime-1.30.8/resources/sap-ui-core-nojQuery.js"
 			data-sap-ui-libs="sap.m"
 			data-sap-ui-theme="sap_bluecrystal"
 			data-sap-ui-xx-bindingSyntax="complex"
 			data-sap-ui-resourceroots='{
 				"shambles.blog": "./"
-			}'> /* endOfResourceroots */
+			}'>
 		</script>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">

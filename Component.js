@@ -29,6 +29,23 @@ sap.ui.core.UIComponent.extend("shambles.blog.Component", {
 				targetAggregation : "detailPages",
 				clearTarget : false
 			},
+            routes: [
+                {
+                    pattern: "",
+                    name: "default",
+                    view: "Master",
+					targetAggregation : "masterPages",
+					targetControl: "idAppControl",
+					preservePageInSplitContainer : true,
+                    transition: "slide",
+					subroutes : [
+									{
+										pattern : "Detail/{contextPath}", // will be the url and from has to be provided in the data
+										view : "Detail",
+										name : "Detail" // name used for listening or navigating to this route
+									}]
+                }
+			]
 		}
 	},
 
@@ -42,6 +59,7 @@ sap.ui.core.UIComponent.extend("shambles.blog.Component", {
 		var rootPath = jQuery.sap.getModulePath("shambles.blog");
 
 		// Create and set domain model to the component
+		var sServiceUrl = mConfig.serviceConfig.serviceUrl;
 		var oModel = new sap.ui.model.odata.ODataModel(sServiceUrl, true);
 		this.setModel(oModel);
 

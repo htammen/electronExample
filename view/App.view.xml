@@ -2,5 +2,11 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true"
 	xmlns="sap.m">
-	<SplitApp id="idAppControl" />
+	<SplitApp id="idAppControl" showHeader="false" mode="StretchCompressMode">
+		<masterPages>
+		</masterPages>
+		<detailPages>
+			<Label text="Detail"/>
+		</detailPages>
+	</SplitApp>
 </mvc:View>

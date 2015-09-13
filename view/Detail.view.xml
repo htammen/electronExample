@@ -1,0 +1,59 @@
+<sap.ui.core.mvc:View controllerName="shambles.blog.view.Detail"
+    xmlns="sap.m"
+    xmlns:sap.ui.core="sap.ui.core"
+    xmlns:sap.ui.layout.form="sap.ui.layout.form"
+    xmlns:sap.ui.core.mvc="sap.ui.core.mvc" >
+    <Page navButtonPress="handleNavButtonPress" title="{i18n>DETAIL_TITLE}" showNavButton="{device>/isPhone}">
+        <content>
+            <ObjectHeader id="header" title="{Name}" number="{Price}" introActive="false" titleActive="false" iconActive="false">
+                <customData>
+                    <sap.ui.core:CustomData key="sapDtResourcePath" value="Products"></sap.ui.core:CustomData>
+                </customData>
+                <attributes>
+                    <ObjectAttribute text="{i18n>DETAIL_TEXT}" active="false"></ObjectAttribute>
+                </attributes>
+            </ObjectHeader>
+            <IconTabBar expanded="{device>/isNoPhone}" selectedKey="__xmlview2--iconTabFilter">
+                <customData>
+                    <sap.ui.core:CustomData key="sapDtResourcePath" value="Products"></sap.ui.core:CustomData>
+                </customData>
+                <items>
+                    <IconTabFilter id="iconTabFilter" icon="sap-icon://hint">
+                        <content>
+                            <sap.ui.layout.form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+                                <sap.ui.layout.form:content>
+                                    <sap.ui.core:Title text="More Details"></sap.ui.core:Title>
+                                    <Label id="label0" text="Description"></Label>
+                                    <Text id="text0" text="{Description}" maxLines="2"></Text>
+                                    <Label id="label1" text="Price"></Label>
+                                    <Text id="text1" text="{Price}" maxLines="0"></Text>
+                                    <Label id="label2" text="ReleaseDate"></Label>
+                                    <Text id="text2" text="{ReleaseDate}" maxLines="0"></Text>
+                                    <Label id="label3" text="DiscontinuedDate"></Label>
+                                    <Text id="text3" text="{DiscontinuedDate}" maxLines="0"></Text>
+                                    <Label id="label4" text="Rating"></Label>
+                                    <Text id="text4" text="{Rating}" maxLines="0"></Text>
+                                </sap.ui.layout.form:content>
+                            </sap.ui.layout.form:SimpleForm>
+                        </content>
+                    </IconTabFilter>
+                    <IconTabFilter id="iconTabAjaxTools" icon="sap-icon://wrench">
+                        <content>
+                            <sap.ui.layout.form:SimpleForm minWidth="1024" editable="false" layout="ResponsiveGridLayout">
+                                <sap.ui.layout.form:content>
+                                </sap.ui.layout.form:content>
+                            </sap.ui.layout.form:SimpleForm>
+                        </content>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+        <footer>
+            <Bar>
+                <contentRight>
+                    <Button id="actionButton" press="openActionSheet" icon="sap-icon://action"></Button>
+                </contentRight>
+            </Bar>
+        </footer>
+    </Page>
+</sap.ui.core.mvc:View>
